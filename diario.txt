@@ -3,3 +3,8 @@ marzo 17 de 2026. Hoy es el primer día de este diario de git
 marzo 19 de 2026. Sigo aprendiendo un poco de cómo manejar git,
 por ejemplo como saber que archivos están pendiente de commit o
 de adicionar para que se guarden los cambios al control de versiones.
+
+marzo 20 de 2026. Hice la fusión de la rama emergency-fix con la rama main,
+también eliminé la rama emergency-fix pero al hacer push el repo de Github 
+tiene ambas ramas aún. Por ello actualizo diario.txt para ver si al hacer es-
+ta tarea y hacer commit y push logro que el repo se actualice.
