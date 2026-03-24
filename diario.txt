@@ -10,3 +10,11 @@ tiene ambas ramas aún; por ello actualizo diario.txt para ver si al hacer es-
 ta tarea y hacer commit y push logro que el repo se actualice. Luego de consultar
 a Copilot me responde que hay que usar un comando específico para hacer el borrado 
 también en el repo remoto git push origin --delete.
+
+marzo 24 de 2026. Sigo prácticando git usando y conociendo comandos como add, merge
+checkout, commit, push, entre otros; además de intentar crear entornos virtuales para 
+trabajar con Python. Por ahora he reemplazado mi interés por lo relacionado 
+al desarrollo web y en su lugar estoy revisando temas como n8n, Solidity,
+git y Python. Por último vi el primer capítulo de JoJo´s SBR y me gustó mucho;
+al tiempo descargué el PDF del manga en el que se basa la serie anteriormente
+mencionada.
