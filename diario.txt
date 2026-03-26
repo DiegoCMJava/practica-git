@@ -18,3 +18,9 @@ al desarrollo web y en su lugar estoy revisando temas como n8n, Solidity,
 git y Python. Por último vi el primer capítulo de JoJo´s SBR y me gustó mucho;
 al tiempo descargué el PDF del manga en el que se basa la serie anteriormente
 mencionada.
+
+marzo 26 de 2026. Al parecer el capítulo dos de Steel Ball Run no saldrá el día 
+esperado y los seguidores de esta historia están(estamos) algo tristes. también
+quiero anotar que ayer 25 hice mi primer pull request en Git Hub, de momento 
+siento que voy avanzando en el control de versiones pero claro gracias a la ayuda
+de la herramienta Copilot.   
