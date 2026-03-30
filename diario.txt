@@ -23,4 +23,13 @@ marzo 26 de 2026. Al parecer el capítulo dos de Steel Ball Run no saldrá el d�
 esperado y los seguidores de esta historia están(estamos) algo tristes. también
 quiero anotar que ayer 25 hice mi primer pull request en Git Hub, de momento 
 siento que voy avanzando en el control de versiones pero claro gracias a la ayuda
-de la herramienta Copilot.   
+de la herramienta Copilot.
+
+marzo 30 de 2026. Acaban de anunciar el capítulo 2, le llamaron etapa 2, de JoJo´s
+SBR pero no dijeron el día de estreno, solo se limitaron a dar el año 😄; así que hay 
+una 'guerra' de memes y demás ocurrencias de la virtualidad moderna. Ayer le trabajé
+al proyecto 'invasoras' y aunque tuve dificultades para arrancar en el entorno virtual
+logré correr el proyecto que va quedando como espero de momento. Hoy pretendo usar
+el comando 'git fecth' en este proyecto en el que pretendo implementar el uso de 
+objetos de javaScript con archivos json para la información que se mostrará en la
+página web.
