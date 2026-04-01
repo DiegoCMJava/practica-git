@@ -33,3 +33,7 @@ logré correr el proyecto que va quedando como espero de momento. Hoy pretendo u
 el comando 'git fecth' en este proyecto en el que pretendo implementar el uso de 
 objetos de javaScript con archivos json para la información que se mostrará en la
 página web.
+
+abril 01 de 2026. La misión Artemis II ha logrado despegar después de varios retrasos
+y todo apunta a que saldrá bien, dar una vuelta a la Luna y preparar el campo para
+futuras misiones. 
