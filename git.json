@@ -1,6 +1,10 @@
 [
     {
         "name": "git init",
-        "description":"Inicializa un nuevo repositorio."
+        "description":"Inicializa un nuevo repositorio. Al ejecutar este comando se crea una carpeta oculta en el proyecto llamada .git."
+    },
+    {
+        "name": "ls/ls -a",
+        "description": "Sirve para mostrar los archivos del proyecto. Visibles/Visibles y ocultos."
     }
 ]
