@@ -2,5 +2,9 @@
     {
         "name":"Programación",
         "description":"Programar es decirle a una computadora qué hacer."
+    },
+    { 
+      "name": "Variable", 
+      "description": "Es un espacio en la memoria del programa de computador reservado para almacenar uno o varios tipos de datos." 
     }
 ]
