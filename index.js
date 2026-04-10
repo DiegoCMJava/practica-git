@@ -38,7 +38,7 @@ function createTable(data){
 }
 
 // cargar los datos de git.json
-async function loadData() {
+async function loadGitData() {
     try {
         const response = await fetch("git.json");
 
@@ -59,7 +59,7 @@ async function loadData() {
       gitSection.appendChild(errorMsg);
     }
 }
-loadData();
+loadGitData();
 
 // conceptsSection
 const conceptsSection = document.getElementById("conceptsSection");
