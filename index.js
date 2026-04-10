@@ -72,6 +72,10 @@ const conceptsSection = document.getElementById("conceptsSection");
         button.classList.add("concept-button");
 
         button.addEventListener("click", () => {
+            // verificar si ya existe un modal abierto
+            if(document.querySelector(".modal")){
+                return; // no crea otro modal si ya hay uno activo
+            }
             const modal = document.createElement("div");
             modal.classList.add("modal");
 
