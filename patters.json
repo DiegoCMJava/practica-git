@@ -1,0 +1,13 @@
+[
+    {
+      "name": "Factory Method",
+      "type": "Creacional",
+      "description": "También llamado Método Fábrica o Constructor Virtual es un patrón que proporciona una interfaz para crear objetos en una superclase, permitiendo que clases subalternas alteren los tipos de objetos que se crearán.",
+      "structure": [
+        "Producto",
+        "Productos Concretos",
+        "Clase Creadora",
+        "Creadores Concretos"
+      ]
+    }
+  ]
