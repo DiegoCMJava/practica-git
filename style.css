@@ -2,11 +2,18 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: honeydew;
 }
 main {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.tagline {
+    font-size: larger;
+    font-family: cursive;
+    margin: 2px;
 }
 .nav-menu {
     display: flex;
