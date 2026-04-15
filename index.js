@@ -1,127 +1,183 @@
-document.addEventListener("DOMContentLoaded", ()=> {
-const gitSection = document.getElementById("gitSection");
+document.addEventListener("DOMContentLoaded", () => {
+    const gitSection = document.getElementById("gitSection");
 
-// Crear tabla para section de git
-function createTable(data){
-    const table = document.createElement("table");
-    table.border = "1"; // solo para prueba rápida. se quitará en un futuro
+    // Crear tabla para section de git
+    function createTable(data) {
+        const table = document.createElement("table");
+        table.border = "1"; // solo para prueba rápida. se quitará en un futuro
 
-    const thead = document.createElement("thead");
-    const headerRow = document.createElement("tr");
+        const thead = document.createElement("thead");
+        const headerRow = document.createElement("tr");
 
-    ["Comando", "Descripción"].forEach(text => {
-        const th = document.createElement("th");
-        th.textContent = text;
-        headerRow.appendChild(th);
-    });
+        ["Comando", "Descripción"].forEach(text => {
+            const th = document.createElement("th");
+            th.textContent = text;
+            headerRow.appendChild(th);
+        });
 
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
 
-    const tbody = document.createElement("tbody");
-    data.forEach(item => {
-        const row = document.createElement("tr");
+        const tbody = document.createElement("tbody");
+        data.forEach(item => {
+            const row = document.createElement("tr");
 
-        const nameCell = document.createElement("td");
-        nameCell.textContent = item.name;
+            const nameCell = document.createElement("td");
+            nameCell.textContent = item.name;
 
-        const descCell = document.createElement("td");
-        descCell.textContent = item.description;
+            const descCell = document.createElement("td");
+            descCell.textContent = item.description;
 
-        row.appendChild(nameCell);
-        row.appendChild(descCell);
-        tbody.appendChild(row);
-    });
-    
-    table.appendChild(tbody);
-    gitSection.appendChild(table);
-}
+            row.appendChild(nameCell);
+            row.appendChild(descCell);
+            tbody.appendChild(row);
+        });
 
-// cargar los datos de git.json
-async function loadGitData() {
-    try {
-        const response = await fetch("git.json");
-
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`);   
-        }
-
-        const data = await response.json();
-
-        if (!Array.isArray(data)){
-            throw new Error("El formato del JSON no es válido.")
-        }
-        createTable(data);
-    } catch (error) {
-        console.error("Error al cargar los datos:", error);
-      const errorMsg = document.createElement("p");
-      errorMsg.textContent = "No se pudieron cargar los comandos.";
-      gitSection.appendChild(errorMsg);
+        table.appendChild(tbody);
+        gitSection.appendChild(table);
     }
-}
-loadGitData();
 
-// conceptsSection
-const conceptsSection = document.getElementById("conceptsSection");
- function createConceptButtons(data){
-    const container = document.createElement("div");
+    // cargar los datos de git.json
+    async function loadGitData() {
+        try {
+            const response = await fetch("git.json");
 
-    data.forEach(item => {
-        const button = document.createElement("button");
-        button.textContent = item.name;
-        button.classList.add("concept-button");
-
-        button.addEventListener("click", () => {
-            // verificar si ya existe un modal abierto
-            if(document.querySelector(".modal")){
-                return; // no crea otro modal si ya hay uno activo
+            if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status}`);
             }
-            const modal = document.createElement("div");
-            modal.classList.add("modal");
 
-            const modalContent = document.createElement("div");
-            modalContent.classList.add("modal-content");
+            const data = await response.json();
+
+            if (!Array.isArray(data)) {
+                throw new Error("El formato del JSON no es válido.")
+            }
+            createTable(data);
+        } catch (error) {
+            console.error("Error al cargar los datos:", error);
+            const errorMsg = document.createElement("p");
+            errorMsg.textContent = "No se pudieron cargar los comandos.";
+            gitSection.appendChild(errorMsg);
+        }
+    }
+    loadGitData();
+
+    // conceptsSection
+    const conceptsSection = document.getElementById("conceptsSection");
+    function createConceptButtons(data) {
+        const container = document.createElement("div");
+
+        data.forEach(item => {
+            const button = document.createElement("button");
+            button.textContent = item.name;
+            button.classList.add("concept-button");
+
+            button.addEventListener("click", () => {
+                // verificar si ya existe un modal abierto
+                if (document.querySelector(".modal")) {
+                    return; // no crea otro modal si ya hay uno activo
+                }
+                const modal = document.createElement("div");
+                modal.classList.add("modal");
+
+                const modalContent = document.createElement("div");
+                modalContent.classList.add("modal-content");
+
+                const title = document.createElement("h3");
+                title.textContent = item.name;
+
+                const description = document.createElement("p");
+                description.textContent = item.description;
+
+                const closeBtn = document.createElement("span");
+                closeBtn.textContent = "×";
+                closeBtn.classList.add("close");
+                closeBtn.addEventListener("click", () => modal.remove());
+
+                modalContent.appendChild(closeBtn);
+                modalContent.appendChild(title);
+                modalContent.appendChild(description);
+                modal.appendChild(modalContent);
+
+                document.body.appendChild(modal);
+            });
+            container.appendChild(button)
+        });
+
+        conceptsSection.appendChild(container);
+    }
+    async function loadConceptsData() {
+        try {
+            const response = await fetch("concepts.json");
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+
+            const data = await response.json();
+            if (!Array.isArray(data)) throw new Error("El formato del JSON no es válido.");
+
+            createConceptButtons(data);
+        } catch (error) {
+            console.error("Error al cargar los datos:", error);
+            const errorMsg = document.createElement("p");
+            errorMsg.textContent = "No se pudieron cargar los conceptos.";
+            conceptsSection.appendChild(errorMsg);
+        }
+    }
+
+    loadConceptsData();
+
+    // patternsSection
+    const patternsSection = document.getElementById("patternsSection");
+    function createPatternCards(data) {
+        const carousel = document.createElement("div");
+        carousel.classList.add("carousel");
+
+        data.forEach(item => {
+            const card = document.createElement("article");
+            card.classList.add("pattern-card");
 
             const title = document.createElement("h3");
             title.textContent = item.name;
 
+            const type = document.createElement("p");
+            type.textContent = `Tipo: ${item.type}`;
+
             const description = document.createElement("p");
             description.textContent = item.description;
 
-            const closeBtn = document.createElement("span");
-            closeBtn.textContent = "×";
-            closeBtn.classList.add("close");
-            closeBtn.addEventListener("click", () => modal.remove());
+            const structureList = document.createElement("ul");
+            item.structure.forEach(element => {
+                const li = document.createElement("li");
+                li.textContent = element;
+                structureList.appendChild(li);
+            });
 
-            modalContent.appendChild(closeBtn);
-            modalContent.appendChild(title);
-            modalContent.appendChild(description);
-            modal.appendChild(modalContent);
+            card.appendChild(title);
+            card.appendChild(type);
+            card.appendChild(description);
+            card.appendChild(structureList);
 
-            document.body.appendChild(modal);
+            carousel.appendChild(card);
         });
-        container.appendChild(button)
-    });
-
-    conceptsSection.appendChild(container);
- }
- async function loadConceptsData() {
-    try {
-      const response = await fetch("concepts.json");
-      if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
-
-      const data = await response.json();
-      if (!Array.isArray(data)) throw new Error("El formato del JSON no es válido.");
-
-      createConceptButtons(data);
-    } catch (error) {
-      console.error("Error al cargar los datos:", error);
-      const errorMsg = document.createElement("p");
-      errorMsg.textContent = "No se pudieron cargar los conceptos.";
-      conceptsSection.appendChild(errorMsg);
+        patternsSection.appendChild(carousel);
     }
-  }
-
-  loadConceptsData();
+    async function loadPatternsData() {
+        try {
+          const response = await fetch("patterns.json");
+          if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+      
+          const data = await response.json();
+          if (!Array.isArray(data)) throw new Error("El formato del JSON no es válido.");
+      
+          createPatternCards(data);
+        } catch (error) {
+          console.error("Error al cargar los patrones:", error);
+          const errorMsg = document.createElement("p");
+          errorMsg.textContent = "No se pudieron cargar los patrones.";
+          patternsSection.appendChild(errorMsg);
+        }
+      }
+      
+      loadPatternsData();
+      
+      
 
 });
