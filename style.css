@@ -1,68 +1,104 @@
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: honeydew;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: honeydew;
 }
 main {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .tagline {
-    font-size: larger;
-    font-family: cursive;
-    margin: 2px;
+  font-size: larger;
+  font-family: cursive;
+  margin: 2px;
 }
 .nav-menu {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px;
-    font-size: larger;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+  font-size: larger;
 }
 .nav-menu a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .nav-menu a:hover {
-    background-color: lightgreen;
-    border-radius: 5px;
+  background-color: lightgreen;
+  border-radius: 5px;
 }
 
 .concepts-section div {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
+}
+.concepts-section button {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: cursive;
+}
+.modal { 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
   }
-  .concepts-section button {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: #000;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
-    font-family: cursive;
   }
 
 .git-section table {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
-.git-section td, th {
-    border: 1px solid #ddd;
-    padding: 8px;
+.git-section td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
-.git-section tr:nth-child(even) { background-color: #f2f2f2;}
-.git-section tr:hover {background-color: #ddd;}
+.git-section tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.git-section tr:hover {
+  background-color: #ddd;
+}
 .git-section th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
 }
