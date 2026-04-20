@@ -1,10 +1,26 @@
 [
-    {
-        "name": "git init",
-        "description":"Inicializa un nuevo repositorio. Al ejecutar este comando se crea una carpeta oculta en el proyecto llamada .git."
-    },
-    {
-        "name": "ls/ls -a",
-        "description": "Sirve para mostrar los archivos del proyecto. Visibles/Visibles y ocultos."
-    }
+  {
+    "name": "git config --local/--global/--system",
+    "description": "Sirve para crear o cambiar los datos que se usarán para informar quién realizó los cambios en el repositorio. user.name \"Tu Nombre\", user.email \"tu@correo.com\", core.editor \"nombre editor de código\"."
+  },
+  {
+    "name": "git config user.name",
+    "description": "Muestra el nombre del usuario configurado."
+  },
+  {
+    "name": "git config user.email",
+    "description": "Muestra el correo del usuario configurado."
+  },
+  {
+    "name": "git config core.editor",
+    "description": "Muestra el editor de código que se usará para abrir archivos."
+  },
+  {
+    "name": "git init",
+    "description": "Inicializa un nuevo repositorio. Al ejecutar este comando se crea una carpeta oculta en el proyecto llamada .git."
+  },
+  {
+    "name": "ls/ls -a",
+    "description": "Sirve para mostrar los archivos del proyecto. Visibles/Visibles y ocultos."
+  }
 ]
