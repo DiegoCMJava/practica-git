@@ -9,5 +9,17 @@
         "Clase Creadora",
         "Creadores Concretos"
       ]
+    },
+    {
+      "name": "Abstract Factory",
+      "type": "Creacional",
+      "description": "Permite producir familias de objetos relacionados sin especificar sus clases concretas.",
+      "structure": [
+        "Productos Abstractos",
+        "Productos Concretos",
+        "La interfaz Fábrica Abstracta",
+        "Fábricas Concretas",
+        "Cliente"
+      ]
     }
   ]
